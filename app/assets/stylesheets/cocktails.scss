@@ -3,9 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
  .cocktail-list {
   display: flex;
-    a {
+  a {
     color: white
   }
  }
 
+#navbarSupportedContent {
+  a {
+    color: white
+  }
+}
 
+.card {
+  background-color: $black;
+  a {
+    color: white
+  }
+}

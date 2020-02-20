@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :doses, only: %i[new create destroy]
   end
 
-  resources :doses, only: %i[destroy]
+  resources :doses, only: %i[destroy index]
 end

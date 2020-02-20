@@ -1,11 +1,24 @@
+ <nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" src="CKTL.png" alt="Card image cap">The Diplomat</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-primary"><%= link_to "Add a cocktail", new_cocktail_path %></button>
+    </form>
+  </div>
+</nav>
+
  <div class="container">
-    <h1>Cocktails</h1>
+    <h1 class="text-center mt-3">Our Menu</h1>
     <div class="cocktail-list">
       <div class="row">
-      <% @cocktails.each do |cocktail| %>
+      <% @cocktails.shuffle.each do |cocktail| %>
         <div class="col-4">
-        <div class="card m-2">
-          <img class="card-img-top" src="https://loremflickr.com/g/320/240/<%= cocktail.name %>" alt="Card image cap">
+        <div class="card m-2 shadow-lg p-3 mb-5 bg-white">
+          <img class="card-img-top" src="<%= cocktail.url %>" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= "#{cocktail.name}" %></h5>
             <button class="btn btn-primary"><%= link_to "More Info", cocktail_path(cocktail.id) %></button>
@@ -15,7 +28,6 @@
       <% end %>
       </div>
     </div>
-    <%= link_to "Add a cocktail", new_cocktail_path %>
 </div>
 
 

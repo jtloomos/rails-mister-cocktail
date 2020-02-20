@@ -10,7 +10,3 @@ Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
 Ingredient.create(name: "egg whites")
 Ingredient.create(name: "teguila")
-
-Cocktail.create(name: "Gin and Tonic")
-Cocktail.create(name: "Tequila Sunrise")
-Cocktail.create(name: "Moscow Mule")
