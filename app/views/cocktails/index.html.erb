@@ -1,41 +1,45 @@
- <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" src="CKTL.png" alt="Card image cap">
-    <p>
-      <span id="banner-typed-text"></span>
-    </p>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-    <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-primary"><%= link_to "Add a cocktail", new_cocktail_path %></button>
-    </form>
-  </div>
-</nav>
-
- <div class="container">
+<div class="container">
   <h1 class="text-center font-weight-bold">Our Menu</h1>
     <div class="cocktail-list">
       <div class="row">
-      <% @cocktails.shuffle.each do |cocktail| %>
-        <div class="col-4">
-        <div class="card m-2 shadow-lg p-3 mb-5 bg-white">
-          <img class="card-img-top" src="<%= cocktail.url %>" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%= "#{cocktail.name}" %></h5>
-            <button class="btn btn-primary"><%= link_to "More Info", cocktail_path(cocktail.id) %></button>
+      <% @cocktails.shuffle.each_with_index do |cocktail, index| %>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div data-aos="fade-up" class="card m-2 shadow-lg p-3 bg-white mb-5">
+            <%= cl_image_tag cocktail.photo.key, height: 500, width: 400, crop: :fill, class: "card-img-top rounded img-fluid" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= "#{cocktail.name}" %></h5>
+              <button class="btn btn-primary"><%= link_to "More Info", cocktail_path(cocktail.id) %></button>
+            </div>
           </div>
         </div>
-      </div>
       <% end %>
       </div>
     </div>
 </div>
 
 
-
-
-
+<div class="container">
+  <div class="camera">
+      <div class="top">
+        <div class="flash"></div>
+        <div class="timer"></div>
+        <div class="sensor"></div>
+        <div class="lens"><div class="glass"></div></div>
+        <div class="shutter"></div>
+        <div class="viewfinder"><div class="glass"><div class="back"></div></div></div>
+        <div class="toggle-container"><div class="toggle"></div></div>
+        <div class="power"></div>
+        <div class="title"></div>
+      </div>
+      <div class="bottom">
+        <div class="toggle-container"><div class="toggle"><div class="handle"></div></div></div>
+        <div class="printer"></div>
+        <div class="labels">
+          <div class="rainbow"></div>
+          <div class="logo">Polaroid</div>
+          <div class="type"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 

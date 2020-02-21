@@ -1,16 +1,34 @@
-<div class="container">
-  <h1><%= @cocktail.name %></h1>
-  <h4>Ingredient List</h4>
-  <% @cocktail.doses.each do |dose| %>
+<div class="container1">
+  <div class="row1">
+
+    <div class="top--container">
+      <div class="top">
+        <h1><%= link_to "X", cocktails_path %></h1>
+        <%= cl_image_tag @cocktail.photo.key, height: 500, width: 400, crop: :fill, class: "card-img-top rounded img-fluid" %>
+        <br>
+        <br>
+        <h2 class="text-center"><%= @cocktail.name %></h2>
+        <p class="text-center top--text"><% @cocktail.doses.each do |dose| %>
     <ul>
       <% ingredient = Ingredient.find(dose.ingredient_id) %>
-      <li><%= dose.description %> - <%= ingredient.name %> (<%= link_to "Delete", cocktail_dose_path(dose.cocktail_id, dose.id),  method: :delete %>) <%= dose.id %></li>
+      <li><%= dose.description %> - <%= ingredient.name %> (<%= link_to "delete", cocktail_dose_path(dose.cocktail_id, dose.id),  method: :delete %>)</li>
     </ul>
   <% end %>
-  <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail.id) %>
-  <footer><%= link_to "Return to cocktail list", cocktails_path %></footer>
-</div>
+      </div>
+    </div>
 
+    <div class="bottom--container">
+      <div class="bottom">
+
+        <button class="btn btn-success btn-lg btn-fab">
+          <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail.id) %> &rarr;
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
 
 
 
