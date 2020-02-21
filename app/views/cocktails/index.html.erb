@@ -1,5 +1,9 @@
  <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" src="CKTL.png" alt="Card image cap">The Diplomat</a>
+  <a class="navbar-brand" src="CKTL.png" alt="Card image cap">
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -12,7 +16,7 @@
 </nav>
 
  <div class="container">
-    <h1 class="text-center mt-3">Our Menu</h1>
+  <h1 class="text-center font-weight-bold">Our Menu</h1>
     <div class="cocktail-list">
       <div class="row">
       <% @cocktails.shuffle.each do |cocktail| %>
